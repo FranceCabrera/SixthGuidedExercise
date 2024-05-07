@@ -42,7 +42,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void showResult() {
-        if (two.isChecked() && four.isChecked()) {
+        if (one.isChecked() && two.isChecked() && three.isChecked() && four.isChecked()) {
+            result.setVisibility(View.VISIBLE);
+            result.setTextColor(Color.GREEN);
+            result.setText("Number Combination Color is GREEN");
+        } else if (two.isChecked() && four.isChecked()) {
             result.setVisibility(View.VISIBLE);
             result.setTextColor(Color.RED);
             result.setText("Number Combination Color is RED");
@@ -50,14 +54,10 @@ public class MainActivity extends AppCompatActivity {
             result.setVisibility(View.VISIBLE);
             result.setTextColor(Color.BLUE);
             result.setText("Number Combination Color is BLUE");
-        } else if (one.isChecked() || two.isChecked() || three.isChecked() || four.isChecked()) {
-            result.setVisibility(View.VISIBLE);
-            result.setTextColor(Color.GREEN);
-            result.setText("Number Combination Color is GREEN");
         } else if (one.isChecked() && two.isChecked()) {
             result.setVisibility(View.VISIBLE);
             result.setTextColor(Color.YELLOW);
-            result.setText("Number Combination Color is Yellow");
+            result.setText("Number Combination Color is YELLOW");
         } else if (two.isChecked() && three.isChecked()) {
             result.setVisibility(View.VISIBLE);
             result.setTextColor(Color.MAGENTA);
@@ -67,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
             result.setTextColor(Color.BLACK);
             result.setText("Number Combination Color is BLACK");
         } else {
-        result.setVisibility(View.INVISIBLE);
+            result.setVisibility(View.INVISIBLE);
         }
     }
 }
